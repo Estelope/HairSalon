@@ -27,7 +27,7 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Stylist stylists)
+    public ActionResult Create(Stylist stylist)
     {
       _db.Stylists.Add(stylist);
       _db.SaveChanges();
@@ -44,7 +44,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Edit(int id)
     {
-      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistIdId == id);
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
       return View(thisStylist);
     }
 
